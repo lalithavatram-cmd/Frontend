@@ -2,6 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
+<<<<<<< HEAD
+=======
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
+>>>>>>> 096e8fb (Initial commit - UI updates)
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,8 +67,43 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+<<<<<<< HEAD
       <body className="min-h-full flex flex-col bg-[var(--app-bg-solid)]">
         <Providers>{children}</Providers>
+=======
+      <body className="relative min-h-full flex flex-col">
+        {/* ── Persistent pastel gradient background ── */}
+        <div
+          aria-hidden
+          className="pointer-events-none fixed inset-0 -z-10"
+          style={{
+            background: `
+              radial-gradient(circle at 80% 10%, rgba(186,230,253,0.55) 0%, transparent 38%),
+              radial-gradient(circle at 10% 15%, rgba(167,243,208,0.30) 0%, transparent 35%),
+              radial-gradient(circle at 50% 60%, rgba(196,220,158,0.20) 0%, transparent 40%),
+              radial-gradient(circle at 90% 85%, rgba(186,230,253,0.35) 0%, transparent 35%),
+              radial-gradient(circle at 20% 80%, rgba(167,243,208,0.22) 0%, transparent 30%),
+              #f8fafc
+            `,
+          }}
+        />
+        {/* ── Subtle grid overlay ── */}
+        <div
+          aria-hidden
+          className="pointer-events-none fixed inset-0 -z-10"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(100,116,139,0.07) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(100,116,139,0.07) 1px, transparent 1px)
+            `,
+            backgroundSize: "56px 56px",
+          }}
+        />
+        <Providers>
+          <AnimatedBackground />
+          {children}
+        </Providers>
+>>>>>>> 096e8fb (Initial commit - UI updates)
       </body>
     </html>
   );

@@ -52,10 +52,17 @@ function StatusBadge({ status }: { status: string }) {
     <span className={[
       "inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium capitalize",
       isActive
+<<<<<<< HEAD
         ? "bg-emerald-500/12 text-emerald-400 ring-1 ring-emerald-500/20"
         : "bg-white/8 text-[var(--app-text-muted)] ring-1 ring-white/10",
     ].join(" ")}>
       <span className={["h-1.5 w-1.5 rounded-full", isActive ? "bg-emerald-400 animate-ping-slow" : "bg-[var(--app-text-muted)]"].join(" ")} />
+=======
+        ? "bg-[#546B41]/12 text-[#546B41] ring-1 ring-[#546B41]/20"
+        : "bg-[#DCCCAC]/30 text-[var(--app-text-muted)] ring-1 ring-[#DCCCAC]/50",
+    ].join(" ")}>
+      <span className={["h-1.5 w-1.5 rounded-full", isActive ? "bg-[#546B41] animate-ping-slow" : "bg-[var(--app-text-muted)]"].join(" ")} />
+>>>>>>> 096e8fb (Initial commit - UI updates)
       {status || "unknown"}
     </span>
   );
@@ -102,17 +109,29 @@ function Sidebar({ mobile, onClose }: { mobile?: boolean; onClose?: () => void }
       {/* Brand */}
       <div className="flex items-center justify-between px-2 py-2">
         <Link href="/" className="flex items-center gap-2" onClick={onClose}>
+<<<<<<< HEAD
           <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 shadow-sm">
+=======
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#546B41] shadow-sm">
+>>>>>>> 096e8fb (Initial commit - UI updates)
             <svg className="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09Z" />
             </svg>
           </div>
           <span className="text-sm font-semibold text-[var(--app-text)]">
+<<<<<<< HEAD
             Prompt2<span className="text-emerald-400">Deploy</span>
           </span>
         </Link>
         {mobile && (
           <button onClick={onClose} className="rounded-lg p-1.5 text-[var(--app-text-muted)] hover:bg-white/5 hover:text-[var(--app-text)]">
+=======
+            Prompt2<span className="text-[#546B41]">Deploy</span>
+          </span>
+        </Link>
+        {mobile && (
+          <button onClick={onClose} className="rounded-lg p-1.5 text-[var(--app-text-muted)] hover:bg-[#DCCCAC]/30 hover:text-[var(--app-text)]">
+>>>>>>> 096e8fb (Initial commit - UI updates)
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -131,6 +150,7 @@ function Sidebar({ mobile, onClose }: { mobile?: boolean; onClose?: () => void }
               className={[
                 "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-150",
                 active
+<<<<<<< HEAD
                   ? "bg-emerald-500/10 text-[var(--app-text)] ring-1 ring-emerald-500/20"
                   : "text-[var(--app-text-muted)] hover:bg-white/[0.04] hover:text-[var(--app-text)]",
               ].join(" ")}
@@ -139,6 +159,16 @@ function Sidebar({ mobile, onClose }: { mobile?: boolean; onClose?: () => void }
               {item.label}
               {active && (
                 <span className="ml-auto h-1.5 w-1.5 rounded-full bg-emerald-400" />
+=======
+                  ? "bg-[#546B41]/10 text-[var(--app-text)] ring-1 ring-[#546B41]/20"
+                  : "text-[var(--app-text-muted)] hover:bg-[#DCCCAC]/20 hover:text-[var(--app-text)]",
+              ].join(" ")}
+            >
+              <span className={active ? "text-[#546B41]" : ""}>{item.icon}</span>
+              {item.label}
+              {active && (
+                <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[#546B41]" />
+>>>>>>> 096e8fb (Initial commit - UI updates)
               )}
             </Link>
           );
@@ -146,13 +176,21 @@ function Sidebar({ mobile, onClose }: { mobile?: boolean; onClose?: () => void }
       </nav>
 
       {/* New agent CTA */}
+<<<<<<< HEAD
       <div className="mt-6 rounded-xl border border-emerald-500/20 bg-emerald-500/[0.05] p-3">
+=======
+      <div className="mt-6 rounded-xl border border-[#546B41]/20 bg-[#546B41]/[0.05] p-3">
+>>>>>>> 096e8fb (Initial commit - UI updates)
         <p className="text-xs font-semibold text-[var(--app-text)]">Deploy another agent</p>
         <p className="mt-0.5 text-xs text-[var(--app-text-muted)]">Expand your automation fleet</p>
         <Link
           href="/onboard"
           onClick={onClose}
+<<<<<<< HEAD
           className="mt-3 flex items-center justify-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-emerald-500"
+=======
+          className="mt-3 flex items-center justify-center gap-1.5 rounded-lg bg-[#546B41] px-3 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-[#99AD7A]"
+>>>>>>> 096e8fb (Initial commit - UI updates)
         >
           + New agent
         </Link>
@@ -204,7 +242,11 @@ export default function DashboardPage() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setSidebarOpen(false)}
+<<<<<<< HEAD
               className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
+=======
+              className="fixed inset-0 z-40 bg-[#1F2937]/40 backdrop-blur-sm lg:hidden"
+>>>>>>> 096e8fb (Initial commit - UI updates)
             />
             <motion.div
               initial={{ x: -280 }}
@@ -238,7 +280,11 @@ export default function DashboardPage() {
             <button
               type="button"
               onClick={() => setSidebarOpen(true)}
+<<<<<<< HEAD
               className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[var(--app-border)] text-[var(--app-text-muted)] transition hover:bg-white/5 hover:text-[var(--app-text)] lg:hidden"
+=======
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[var(--app-border)] text-[var(--app-text-muted)] transition hover:bg-[#DCCCAC]/30 hover:text-[var(--app-text)] lg:hidden"
+>>>>>>> 096e8fb (Initial commit - UI updates)
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -253,15 +299,24 @@ export default function DashboardPage() {
             </div>
 
             <div className="flex items-center gap-2">
+<<<<<<< HEAD
               <div className="hidden items-center gap-2 rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] px-3 py-2 text-sm sm:flex">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping-slow" />
+=======
+              <div className="hidden items-center gap-2 rounded-xl border border-[var(--app-border)] bg-[var(--app-card)] px-3 py-2 text-sm sm:flex">
+                <span className="h-2 w-2 rounded-full bg-[#546B41] animate-ping-slow" />
+>>>>>>> 096e8fb (Initial commit - UI updates)
                 <span className="text-[var(--app-text-muted)]">
                   {loading ? "Loading…" : `${activeCount} active`}
                 </span>
               </div>
               <Link
                 href="/onboard"
+<<<<<<< HEAD
                 className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500"
+=======
+                className="inline-flex items-center gap-1.5 rounded-xl bg-[#546B41] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#99AD7A]"
+>>>>>>> 096e8fb (Initial commit - UI updates)
               >
                 <span className="hidden sm:inline">+ New agent</span>
                 <span className="sm:hidden">+</span>
@@ -306,11 +361,19 @@ export default function DashboardPage() {
               <div>
                 <h2 className="font-semibold text-[var(--app-text)]">Your Automations</h2>
                 <p className="mt-0.5 text-xs text-[var(--app-text-muted)]">
+<<<<<<< HEAD
                   Every tenant, agent & workflow deployed through Prompt2Deploy
                 </p>
               </div>
               {!loading && deployments.length > 0 && (
                 <span className="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-xs font-medium text-[var(--app-text-muted)]">
+=======
+                  Every tenant, agent &amp; workflow deployed through Prompt2Deploy
+                </p>
+              </div>
+              {!loading && deployments.length > 0 && (
+                <span className="rounded-full bg-[#DCCCAC]/40 px-2.5 py-0.5 text-xs font-medium text-[var(--app-text-muted)]">
+>>>>>>> 096e8fb (Initial commit - UI updates)
                   {deployments.length} total
                 </span>
               )}
@@ -318,7 +381,11 @@ export default function DashboardPage() {
 
             {/* Error */}
             {fetchError && (
+<<<<<<< HEAD
               <div className="m-4 rounded-xl border border-red-500/20 bg-red-500/8 px-4 py-3 text-sm text-red-300">
+=======
+              <div className="m-4 rounded-xl border border-red-400/20 bg-red-400/8 px-4 py-3 text-sm text-red-500">
+>>>>>>> 096e8fb (Initial commit - UI updates)
                 Could not load deployments: {fetchError}
               </div>
             )}
@@ -341,7 +408,11 @@ export default function DashboardPage() {
             {/* Empty state */}
             {!loading && !fetchError && deployments.length === 0 && (
               <div className="flex flex-col items-center gap-4 py-20 text-center">
+<<<<<<< HEAD
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--app-border)] bg-[var(--app-surface)]">
+=======
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)]">
+>>>>>>> 096e8fb (Initial commit - UI updates)
                   <svg className="h-6 w-6 text-[var(--app-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09Z" />
                   </svg>
@@ -354,7 +425,11 @@ export default function DashboardPage() {
                 </div>
                 <Link
                   href="/onboard"
+<<<<<<< HEAD
                   className="mt-1 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500"
+=======
+                  className="mt-1 inline-flex items-center gap-2 rounded-xl bg-[#546B41] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#99AD7A]"
+>>>>>>> 096e8fb (Initial commit - UI updates)
                 >
                   Build your first agent →
                 </Link>
@@ -378,7 +453,11 @@ export default function DashboardPage() {
                       initial={{ opacity: 0, x: -8 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.05, duration: 0.3 }}
+<<<<<<< HEAD
                       className="grid min-w-[700px] grid-cols-[1.2fr_1fr_1fr_1fr_80px_100px] items-center gap-4 px-6 py-4 transition hover:bg-white/[0.02]"
+=======
+                      className="grid min-w-[700px] grid-cols-[1.2fr_1fr_1fr_1fr_80px_100px] items-center gap-4 px-6 py-4 transition hover:bg-[#DCCCAC]/10"
+>>>>>>> 096e8fb (Initial commit - UI updates)
                     >
                       <p className="truncate text-sm font-semibold text-[var(--app-text)]">
                         {d.business_name || "—"}

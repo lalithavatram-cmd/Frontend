@@ -35,32 +35,55 @@ export function useToast() {
 /* ─── Icons ──────────────────────────────────────────────────────────────── */
 const icons: Record<ToastType, React.ReactNode> = {
   success: (
+<<<<<<< HEAD
     <svg className="h-4 w-4 shrink-0 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+=======
+    <svg className="h-4 w-4 shrink-0 text-[#546B41]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+>>>>>>> 096e8fb (Initial commit - UI updates)
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
     </svg>
   ),
   error: (
+<<<<<<< HEAD
     <svg className="h-4 w-4 shrink-0 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+=======
+    <svg className="h-4 w-4 shrink-0 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+>>>>>>> 096e8fb (Initial commit - UI updates)
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
   ),
   warning: (
+<<<<<<< HEAD
     <svg className="h-4 w-4 shrink-0 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+=======
+    <svg className="h-4 w-4 shrink-0 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+>>>>>>> 096e8fb (Initial commit - UI updates)
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
     </svg>
   ),
   info: (
+<<<<<<< HEAD
     <svg className="h-4 w-4 shrink-0 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+=======
+    <svg className="h-4 w-4 shrink-0 text-[#546B41]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+>>>>>>> 096e8fb (Initial commit - UI updates)
       <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
     </svg>
   ),
 };
 
 const styles: Record<ToastType, string> = {
+<<<<<<< HEAD
   success: "border-emerald-500/20 bg-emerald-500/[0.07]",
   error:   "border-red-500/20    bg-red-500/[0.07]",
   warning: "border-amber-500/20  bg-amber-500/[0.07]",
   info:    "border-indigo-500/20 bg-indigo-500/[0.07]",
+=======
+  success: "border-[#546B41]/20 bg-[#546B41]/[0.07]",
+  error:   "border-red-500/20    bg-red-500/[0.07]",
+  warning: "border-amber-500/20  bg-amber-500/[0.07]",
+  info:    "border-[#546B41]/20 bg-[#546B41]/[0.07]",
+>>>>>>> 096e8fb (Initial commit - UI updates)
 };
 
 /* ─── Single Toast item ──────────────────────────────────────────────────── */
@@ -80,7 +103,11 @@ function ToastItem({
       transition={{ duration: 0.28, ease: "circOut" }}
       className={[
         "glass flex w-80 max-w-[calc(100vw-2rem)] items-center gap-3",
+<<<<<<< HEAD
         "rounded-2xl border px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.45)]",
+=======
+        "rounded-2xl border px-4 py-3 shadow-[0_8px_32px_rgba(84,107,65,0.15)]",
+>>>>>>> 096e8fb (Initial commit - UI updates)
         styles[toast.type],
       ].join(" ")}
     >

@@ -20,20 +20,32 @@ const LEGAL_LINKS = [
 
 export function Footer() {
   return (
+<<<<<<< HEAD
     <footer className="relative border-t border-[var(--app-border)] bg-[var(--app-bg-solid)]">
+=======
+    <footer className="relative border-t border-[var(--app-border)] bg-white/40 backdrop-blur-sm">
+>>>>>>> 096e8fb (Initial commit - UI updates)
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
 
           {/* Brand + Company Info */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5">
+<<<<<<< HEAD
               <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-600 shadow-sm">
+=======
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#546B41] shadow-sm">
+>>>>>>> 096e8fb (Initial commit - UI updates)
                 <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09Z" />
                 </svg>
               </div>
               <span className="text-sm font-semibold text-[var(--app-text)]">
+<<<<<<< HEAD
                 Prompt2<span className="text-emerald-400">Deploy</span>
+=======
+                Prompt2<span className="text-[#546B41]">Deploy</span>
+>>>>>>> 096e8fb (Initial commit - UI updates)
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--app-text-muted)]">
@@ -65,8 +77,13 @@ export function Footer() {
             </div>
 
             <div className="mt-5 flex items-center gap-1.5">
+<<<<<<< HEAD
               <span className="h-1.5 w-1.5 animate-ping-slow rounded-full bg-emerald-400" />
               <span className="text-xs text-emerald-400">All systems operational</span>
+=======
+              <span className="h-1.5 w-1.5 animate-ping-slow rounded-full bg-[#546B41]" />
+              <span className="text-xs text-[#546B41]">All systems operational</span>
+>>>>>>> 096e8fb (Initial commit - UI updates)
             </div>
           </div>
 
@@ -125,14 +142,24 @@ export function Footer() {
 
             {/* Compliance badges */}
             <div className="mt-8 space-y-2">
+<<<<<<< HEAD
               <span className="flex items-center gap-1.5 rounded-lg border border-[var(--app-border)] bg-white/[0.02] px-3 py-2 text-[11px] font-medium text-[var(--app-text-muted)]">
                 <svg className="h-3 w-3 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+=======
+              <span className="flex items-center gap-1.5 rounded-lg border border-[var(--app-border)] bg-[#DCCCAC]/15 px-3 py-2 text-[11px] font-medium text-[var(--app-text-muted)]">
+                <svg className="h-3 w-3 text-[#546B41]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+>>>>>>> 096e8fb (Initial commit - UI updates)
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
                 SOC 2 Ready
               </span>
+<<<<<<< HEAD
               <span className="flex items-center gap-1.5 rounded-lg border border-[var(--app-border)] bg-white/[0.02] px-3 py-2 text-[11px] font-medium text-[var(--app-text-muted)]">
                 <svg className="h-3 w-3 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+=======
+              <span className="flex items-center gap-1.5 rounded-lg border border-[var(--app-border)] bg-[#DCCCAC]/15 px-3 py-2 text-[11px] font-medium text-[var(--app-text-muted)]">
+                <svg className="h-3 w-3 text-[#546B41]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+>>>>>>> 096e8fb (Initial commit - UI updates)
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                 </svg>
                 GDPR Compliant

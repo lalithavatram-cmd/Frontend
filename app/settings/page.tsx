@@ -19,19 +19,33 @@ function Sidebar() {
   return (
     <div className="sticky top-6 rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)] p-4">
       <Link href="/" className="flex items-center gap-2 px-2 py-2">
+<<<<<<< HEAD
         <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 shadow-sm">
           <svg className="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09Z" /></svg>
         </div>
         <span className="text-sm font-semibold text-[var(--app-text)]">Agent<span className="text-emerald-400">Flow</span></span>
+=======
+        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#546B41] shadow-sm">
+          <svg className="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09Z" /></svg>
+        </div>
+        <span className="text-sm font-semibold text-[var(--app-text)]">Agent<span className="text-[#546B41]">Flow</span></span>
+>>>>>>> 096e8fb (Initial commit - UI updates)
       </Link>
       <nav className="mt-4 space-y-1">
         {NAV.map((item) => {
           const active = pathname === item.href;
           return (
+<<<<<<< HEAD
             <Link key={item.href} href={item.href} className={["flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all", active ? "bg-emerald-500/10 text-[var(--app-text)] ring-1 ring-emerald-500/20" : "text-[var(--app-text-muted)] hover:bg-white/[0.04] hover:text-[var(--app-text)]"].join(" ")}>
               <span className={active ? "text-emerald-400" : ""}>{item.icon}</span>
               {item.label}
               {active && <span className="ml-auto h-1.5 w-1.5 rounded-full bg-emerald-400" />}
+=======
+            <Link key={item.href} href={item.href} className={["flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all", active ? "bg-[#546B41]/10 text-[var(--app-text)] ring-1 ring-[#546B41]/20" : "text-[var(--app-text-muted)] hover:bg-[#DCCCAC]/20 hover:text-[var(--app-text)]"].join(" ")}>
+              <span className={active ? "text-[#546B41]" : ""}>{item.icon}</span>
+              {item.label}
+              {active && <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[#546B41]" />}
+>>>>>>> 096e8fb (Initial commit - UI updates)
             </Link>
           );
         })}
@@ -59,7 +73,11 @@ function Toggle({ enabled, onChange }: { enabled: boolean; onChange: () => void 
       role="switch"
       aria-checked={enabled}
       onClick={onChange}
+<<<<<<< HEAD
       className={["relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200", enabled ? "bg-emerald-600" : "bg-[var(--app-border)]"].join(" ")}
+=======
+      className={["relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200", enabled ? "bg-[#546B41]" : "bg-[var(--app-border)]"].join(" ")}
+>>>>>>> 096e8fb (Initial commit - UI updates)
     >
       <span className={["pointer-events-none h-5 w-5 rounded-full bg-white shadow-md transition-transform duration-200", enabled ? "translate-x-5" : "translate-x-0"].join(" ")} />
     </button>
@@ -75,8 +93,13 @@ export default function SettingsPage() {
     {
       title: "Account",
       rows: [
+<<<<<<< HEAD
         { label: "Display Name", description: "Shown across your workspace", children: <input className="w-52 rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] px-3 py-2 text-sm text-[var(--app-text)] outline-none focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/15" defaultValue="My Organization" /> },
         { label: "Email", description: "Your account email address", children: <input className="w-52 rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] px-3 py-2 text-sm text-[var(--app-text)] outline-none focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/15" defaultValue="team@company.com" /> },
+=======
+        { label: "Display Name", description: "Shown across your workspace", children: <input className="w-52 rounded-xl border border-[var(--app-border)] bg-[var(--app-card)] px-3 py-2 text-sm text-[var(--app-text)] outline-none focus:border-[#546B41]/50 focus:ring-2 focus:ring-[#546B41]/15" defaultValue="My Organization" /> },
+        { label: "Email", description: "Your account email address", children: <input className="w-52 rounded-xl border border-[var(--app-border)] bg-[var(--app-card)] px-3 py-2 text-sm text-[var(--app-text)] outline-none focus:border-[#546B41]/50 focus:ring-2 focus:ring-[#546B41]/15" defaultValue="team@company.com" /> },
+>>>>>>> 096e8fb (Initial commit - UI updates)
       ],
     },
     {
@@ -90,13 +113,21 @@ export default function SettingsPage() {
     {
       title: "Plan & Billing",
       rows: [
+<<<<<<< HEAD
         { label: "Current Plan", description: "You are on the Starter (free) plan", children: <Link href="#" className="rounded-xl border border-emerald-500/30 bg-emerald-500/8 px-4 py-2 text-sm font-semibold text-emerald-400 transition hover:bg-emerald-500/12">Upgrade →</Link> },
+=======
+        { label: "Current Plan", description: "You are on the Starter (free) plan", children: <Link href="#" className="rounded-xl border border-[#546B41]/30 bg-[#546B41]/8 px-4 py-2 text-sm font-semibold text-[#546B41] transition hover:bg-[#546B41]/12">Upgrade →</Link> },
+>>>>>>> 096e8fb (Initial commit - UI updates)
       ],
     },
     {
       title: "Danger Zone",
       rows: [
+<<<<<<< HEAD
         { label: "Delete all data", description: "Permanently remove all agents, calls, and workflows", children: <button className="rounded-xl border border-red-500/30 bg-red-500/8 px-4 py-2 text-sm font-semibold text-red-400 transition hover:bg-red-500/12">Delete account</button> },
+=======
+        { label: "Delete all data", description: "Permanently remove all agents, calls, and workflows", children: <button className="rounded-xl border border-red-400/30 bg-red-400/8 px-4 py-2 text-sm font-semibold text-red-500 transition hover:bg-red-400/12">Delete account</button> },
+>>>>>>> 096e8fb (Initial commit - UI updates)
       ],
     },
   ];
@@ -144,7 +175,11 @@ export default function SettingsPage() {
             transition={{ delay: 0.5 }}
             className="flex justify-end"
           >
+<<<<<<< HEAD
             <button className="rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500">
+=======
+            <button className="rounded-xl bg-[#546B41] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#99AD7A]">
+>>>>>>> 096e8fb (Initial commit - UI updates)
               Save changes
             </button>
           </motion.div>
