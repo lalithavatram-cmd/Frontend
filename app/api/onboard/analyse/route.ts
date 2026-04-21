@@ -44,14 +44,26 @@ const AGENT_META: Record<string, { name: string; description: string; icon: stri
 
 // Two alternative templates to show alongside each primary recommendation
 const ALTERNATIVES: Record<string, [string, string]> = {
-  receptionist_v2:    ["lead_qualifier",     "appointment_booker"],
+  receptionist_v2:    ["support_agent",      "appointment_booker"],
   appointment_booker: ["receptionist_v2",    "lead_qualifier"],
   lead_qualifier:     ["receptionist_v2",    "appointment_booker"],
-  order_taker:        ["receptionist_v2",    "support_agent"],
-  support_agent:      ["receptionist_v2",    "lead_qualifier"],
+  order_taker:        ["support_agent",      "receptionist_v2"],
+  support_agent:      ["order_taker",        "receptionist_v2"],
+  order_tracking:     ["support_agent",      "receptionist_v2"],
 };
 
-const ALL_TEMPLATES = Object.keys(AGENT_META);
+// Known valid templates (excludes display-only aliases like default_template)
+const VALID_TEMPLATES = ["receptionist_v2", "appointment_booker", "lead_qualifier", "order_taker", "support_agent"];
+
+// Normalise any unknown template ID Groq might return
+function normaliseTemplate(id: string): string {
+  if (VALID_TEMPLATES.includes(id)) return id;
+  if (id.includes("order") || id.includes("track")) return "support_agent";
+  if (id.includes("appoint") || id.includes("book")) return "appointment_booker";
+  if (id.includes("lead") || id.includes("qualif")) return "lead_qualifier";
+  if (id.includes("support") || id.includes("ticket")) return "support_agent";
+  return "receptionist_v2";
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -81,12 +93,13 @@ export async function POST(req: NextRequest) {
     }
 
     const { config } = await backendRes.json();
-    const primary: string = config.voice_agent_template ?? "receptionist_v2";
+    const rawTemplate: string = config.voice_agent_template ?? "receptionist_v2";
+    const primary = normaliseTemplate(rawTemplate);
 
-    // Build two alternatives — fall back to any templates not already used
+    // Build two distinct alternatives — guaranteed no duplicates
     const alts: [string, string] =
       ALTERNATIVES[primary] ??
-      (ALL_TEMPLATES.filter((t) => t !== primary).slice(0, 2) as [string, string]);
+      (VALID_TEMPLATES.filter((t) => t !== primary).slice(0, 2) as [string, string]);
 
     const suggestions = [primary, ...alts].map((templateId, i) => {
       const meta = AGENT_META[templateId] ?? {

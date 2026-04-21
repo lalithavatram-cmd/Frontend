@@ -126,3 +126,13 @@ body {
   );
   animation: shimmer 1.8s ease-in-out infinite;
 }
+
+/* ── Navbar animated shine streak ──────────────────────────────────────────── */
+.navbar-shine-streak {
+  animation: navbarShine 2.4s linear infinite;
+}
+
+@keyframes navbarShine {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
