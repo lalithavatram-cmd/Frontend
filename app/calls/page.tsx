@@ -117,7 +117,7 @@ function Sidebar() {
               className={[
                 "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all",
                 active
-<<<<<<< HEAD
+ HEAD
                   ? "bg-emerald-500/10 text-[var(--app-text)] ring-1 ring-emerald-500/20"
                   : "text-[var(--app-text-muted)] hover:bg-white/[0.04] hover:text-[var(--app-text)]",
               ].join(" ")}
@@ -125,7 +125,7 @@ function Sidebar() {
               <span className={active ? "text-emerald-400" : ""}>{item.icon}</span>
               {item.label}
               {active && <span className="ml-auto h-1.5 w-1.5 rounded-full bg-emerald-400" />}
-=======
+
                   ? "bg-[#546B41]/10 text-[var(--app-text)] ring-1 ring-[#546B41]/20"
                   : "text-[var(--app-text-muted)] hover:bg-[#DCCCAC]/20 hover:text-[var(--app-text)]",
               ].join(" ")}
@@ -133,7 +133,7 @@ function Sidebar() {
               <span className={active ? "text-[#546B41]" : ""}>{item.icon}</span>
               {item.label}
               {active && <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[#546B41]" />}
->>>>>>> 096e8fb (Initial commit - UI updates)
+  096e8fb (Initial commit - UI updates)
             </Link>
           );
         })}
@@ -147,11 +147,11 @@ function Sidebar() {
 function TranscriptModal({ call, onClose }: { call: CallRecord; onClose: () => void }) {
   return (
     <div
-<<<<<<< HEAD
+  HEAD
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
-=======
+ 
       className="fixed inset-0 z-50 flex items-center justify-center bg-[#1F2937]/40 p-4"
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
       onClick={onClose}
     >
       <div
@@ -165,29 +165,29 @@ function TranscriptModal({ call, onClose }: { call: CallRecord; onClose: () => v
           </div>
           <button
             onClick={onClose}
-<<<<<<< HEAD
+  HEAD
             className="rounded-lg p-1.5 text-[var(--app-text-muted)] transition hover:bg-white/[0.06] hover:text-[var(--app-text)]"
-=======
+ 
             className="rounded-lg p-1.5 text-[var(--app-text-muted)] transition hover:bg-[#DCCCAC]/30 hover:text-[var(--app-text)]"
->>>>>>> 096e8fb (Initial commit - UI updates)
+  096e8fb (Initial commit - UI updates)
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
         </div>
         {call.summary && (
-<<<<<<< HEAD
+  HEAD
           <div className="mb-4 rounded-xl bg-[var(--app-surface)] p-3 text-sm text-[var(--app-text-muted)]">
             <span className="font-medium text-[var(--app-text)]">Summary: </span>{call.summary}
           </div>
         )}
         <div className="max-h-72 overflow-y-auto rounded-xl bg-[var(--app-surface)] p-3 text-xs leading-relaxed text-[var(--app-text-muted)]">
-=======
+ 
           <div className="mb-4 rounded-xl bg-[#FFF8EC] border border-[var(--app-border)] p-3 text-sm text-[var(--app-text-muted)]">
             <span className="font-medium text-[var(--app-text)]">Summary: </span>{call.summary}
           </div>
         )}
         <div className="max-h-72 overflow-y-auto rounded-xl bg-[#FFF8EC] border border-[var(--app-border)] p-3 text-xs leading-relaxed text-[var(--app-text-muted)]">
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
           {call.transcript || "No transcript available."}
         </div>
       </div>
@@ -246,13 +246,13 @@ export default function CallsPage() {
                 All inbound calls handled by your AI agents.
               </p>
             </div>
-<<<<<<< HEAD
+  HEAD
             <div className="flex items-center gap-2 rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] px-3 py-2 text-sm">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping-slow" />
-=======
+ 
             <div className="flex items-center gap-2 rounded-xl border border-[var(--app-border)] bg-[var(--app-card)] px-3 py-2 text-sm">
               <span className="h-2 w-2 rounded-full bg-[#546B41] animate-ping-slow" />
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
               <span className="text-[var(--app-text-muted)]">{calls.length} total</span>
             </div>
           </motion.header>
@@ -296,7 +296,7 @@ export default function CallsPage() {
               <div className="space-y-px">
                 {[...Array(4)].map((_, i) => (
                   <div key={i} className="flex items-center gap-4 border-b border-[var(--app-border)] px-6 py-4 last:border-0">
-<<<<<<< HEAD
+  HEAD
                     <div className="h-4 w-28 animate-pulse rounded bg-white/[0.06]" />
                     <div className="h-4 w-20 animate-pulse rounded bg-white/[0.06]" />
                     <div className="ml-auto h-4 w-16 animate-pulse rounded bg-white/[0.06]" />
@@ -312,7 +312,7 @@ export default function CallsPage() {
               <div className="flex flex-col items-center gap-3 py-16 text-center">
 HEAD
                 <p className="text-sm font-medium text-red-400">Failed to load calls</p>
-=======
+ 
                 <p className="text-sm font-medium text-red-500">Failed to load calls</p>
 096e8fb (Initial commit - UI updates)
                 <p className="text-xs text-[var(--app-text-muted)]">{error}</p>
