@@ -10,6 +10,12 @@ const AGENT_META: Record<string, { name: string; description: string; icon: stri
       "Answers every call 24/7, takes messages, and handles general enquiries so no lead ever goes unanswered.",
     icon: "📞",
   },
+  default_template: {
+    name: "AI Receptionist",
+    description:
+      "Answers every call 24/7, takes messages, and handles general enquiries so no lead ever goes unanswered.",
+    icon: "📞",
+  },
   appointment_booker: {
     name: "Appointment Booker",
     description:

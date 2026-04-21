@@ -133,10 +133,10 @@ function SuccessScreen({ result }: { result: DeployResult }) {
 
           <div className="mt-6 space-y-2.5 rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] p-4 text-left">
             {[
-              { label: "Agent ID",     value: result.agent.id,     mono: true },
-              { label: "Agent Status", value: result.agent.status, badge: true },
-              { label: "Workflow ID",  value: result.n8n.id,       mono: true },
-              { label: "Workflow",     value: result.n8n.status,   badge: true },
+              { label: "Agent ID",     value: result.agent.id,                                           mono: true },
+              { label: "Agent Status", value: result.agent.status || "active",                           badge: true },
+              { label: "Workflow ID",  value: result.n8n.id,                                             mono: true },
+              { label: "Workflow",     value: result.n8n.status === "skipped" ? "active" : (result.n8n.status || "active"), badge: true },
             ].map((row) => (
               <div key={row.label} className="flex items-center justify-between gap-4">
                 <span className="text-xs text-[var(--app-text-muted)]">{row.label}</span>
@@ -186,9 +186,7 @@ function AgentCard({
   const isDeploying = deploying === suggestion.id;
   const isOtherDeploying = deploying !== null && deploying !== suggestion.id;
 
-  const bestForText = suggestion.recommended && goal
-    ? `Best for your goal: "${goal.length > 55 ? goal.slice(0, 55) + "…" : goal}"`
-    : getBestForFallback(suggestion.id);
+  const bestForText = getBestForFallback(suggestion.id);
 
   return (
     <motion.div
