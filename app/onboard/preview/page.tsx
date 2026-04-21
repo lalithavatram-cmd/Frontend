@@ -111,11 +111,11 @@ function SuccessScreen({ result }: { result: DeployResult }) {
         transition={{ duration: 0.45, ease: "circOut" }}
         className="w-full max-w-md"
       >
-<<<<<<< HEAD
+ HEAD
         <div className="rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)] p-8 text-center shadow-[0_32px_80px_-20px_rgba(0,0,0,0.8)]">
-=======
+
         <div className="rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)] p-8 text-center shadow-2xl shadow-[#546B41]/10">
->>>>>>> 096e8fb (Initial commit - UI updates)
+096e8fb (Initial commit - UI updates)
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
