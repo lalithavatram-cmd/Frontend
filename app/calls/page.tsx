@@ -92,7 +92,7 @@ function Sidebar() {
         <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#546B41] shadow-sm">
           <svg className="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09Z" /></svg>
         </div>
-        <span className="text-sm font-semibold text-[var(--app-text)]">Agent<span className="text-[#546B41]">Flow</span></span>
+        <span className="text-sm font-semibold text-[var(--app-text)]">Prompt2<span className="text-[#546B41]">Deploy</span></span>
       </Link>
       <nav className="mt-4 space-y-1">
         {NAV.map((item) => {
@@ -259,21 +259,44 @@ export default function CallsPage() {
                 <p className="text-xs text-[var(--app-text-muted)]">{error}</p>
               </div>
             ) : visible.length === 0 ? (
-              <div className="flex flex-col items-center gap-5 py-24 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)]">
-                  <svg className="h-7 w-7 text-[var(--app-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                  </svg>
+              <div className="flex flex-col items-center gap-6 py-16 text-center px-6">
+                {/* Stats row */}
+                <div className="grid w-full max-w-lg grid-cols-3 gap-3">
+                  {[
+                    { label: "Total Calls", value: "0", icon: "📞" },
+                    { label: "Avg Duration", value: "—", icon: "⏱" },
+                    { label: "Leads Captured", value: "0", icon: "🎯" },
+                  ].map((s) => (
+                    <div key={s.label} className="rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] p-3 text-center">
+                      <div className="text-lg">{s.icon}</div>
+                      <div className="mt-1 text-base font-bold text-[var(--app-text)]">{s.value}</div>
+                      <div className="text-[10px] text-[var(--app-text-muted)]">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+                {/* Placeholder rows */}
+                <div className="w-full max-w-lg space-y-2 opacity-30 pointer-events-none select-none">
+                  {[
+                    { phone: "+1 (555) 012-3456", intent: "Lead", dur: "2m 14s" },
+                    { phone: "+1 (555) 098-7654", intent: "Support", dur: "4m 07s" },
+                    { phone: "+1 (555) 321-0987", intent: "Appointment", dur: "1m 52s" },
+                  ].map((r, i) => (
+                    <div key={i} className="flex items-center justify-between rounded-xl border border-[var(--app-border)] bg-[var(--app-card)] px-4 py-3 text-sm">
+                      <span className="font-mono text-[var(--app-text)]">{r.phone}</span>
+                      <span className="rounded-full bg-[#546B41]/10 px-2.5 py-0.5 text-xs font-medium text-[#546B41]">{r.intent}</span>
+                      <span className="text-[var(--app-text-muted)]">{r.dur}</span>
+                    </div>
+                  ))}
                 </div>
                 <div>
-                  <p className="text-base font-semibold text-[var(--app-text)]">No calls yet</p>
-                  <p className="mt-1.5 max-w-sm text-sm text-[var(--app-text-muted)]">
-                    Once your AI agent starts handling calls, every conversation will appear here.
+                  <p className="text-sm font-semibold text-[var(--app-text)]">Waiting for your first call</p>
+                  <p className="mt-1 max-w-xs text-xs text-[var(--app-text-muted)]">
+                    Once your AI agent handles a call, every conversation appears here in real time.
                   </p>
                 </div>
                 <Link
                   href="/onboard"
-                  className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[#546B41] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#99AD7A]"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#546B41] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#99AD7A]"
                 >
                   Deploy your agent →
                 </Link>
