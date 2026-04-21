@@ -4,29 +4,29 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-<<<<<<< HEAD
-=======
+ HEAD
+
 import { ParallaxBackground } from "@/components/ui/ParallaxBackground";
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
 
 function isValidEmail(v: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 }
 
 const inputCls =
-<<<<<<< HEAD
+ HEAD
   "w-full rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] px-4 py-3 text-sm text-[var(--app-text)] outline-none transition " +
   "placeholder:text-[var(--app-text-muted)]/50 " +
   "focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/15";
 
 const inputErrCls = "border-red-500/50 focus:border-red-500/60 focus:ring-red-500/15";
-=======
+
   "w-full rounded-xl border border-[var(--app-border)] bg-[var(--app-card)] px-4 py-3 text-sm text-[var(--app-text)] outline-none transition " +
   "placeholder:text-[var(--app-text-muted)]/50 " +
   "focus:border-[#546B41]/50 focus:ring-2 focus:ring-[#546B41]/15";
 
 const inputErrCls = "border-red-400/50 focus:border-red-400/60 focus:ring-red-400/15";
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
 
 type Errors = Partial<Record<"name" | "email" | "form", string>>;
 
@@ -71,8 +71,8 @@ export default function SignInPage() {
     }
   }
 
-<<<<<<< HEAD
-=======
+ HEAD
+
   function handleGoogleSignIn() {
     // Generate or reuse a persistent user_id
     let userId = localStorage.getItem("agentflow_user_id");
@@ -84,25 +84,25 @@ export default function SignInPage() {
     router.push("/dashboard");
   }
 
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
   const showNameErr  = (touched.name  || !!errors.name)  && computed.name;
   const showEmailErr = (touched.email || !!errors.email) && computed.email;
 
   return (
-<<<<<<< HEAD
+ HEAD
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-[var(--app-bg-solid)] px-4 py-12">
       {/* Background */}
       <div aria-hidden className="pointer-events-none absolute inset-0 grid-pattern opacity-40" />
       <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-900/15 blur-[120px]" />
 
       <div className="relative w-full max-w-md">
-=======
+
     <div className="relative flex min-h-screen flex-col items-center justify-center px-4 py-12 overflow-hidden">
       {/* ── Parallax background (consistent with landing page) ── */}
       <ParallaxBackground />
 
       <div className="relative z-10 w-full max-w-md">
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, y: -16 }}
@@ -110,11 +110,11 @@ export default function SignInPage() {
           transition={{ duration: 0.4 }}
           className="mb-8 flex flex-col items-center gap-3"
         >
-<<<<<<< HEAD
+ HEAD
           <Link href="/" className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-600 shadow-md">
-=======
+
           <Link href="/" className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#546B41] shadow-md">
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
             <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09Z" />
             </svg>
@@ -130,11 +130,11 @@ export default function SignInPage() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.1, ease: "circOut" }}
-<<<<<<< HEAD
+ HEAD
           className="rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)] p-7 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.8)] sm:p-8"
-=======
+
           className="rounded-2xl border border-[var(--app-border)] bg-white/80 backdrop-blur-xl p-7 shadow-[0_24px_80px_-20px_rgba(84,107,65,0.15)] sm:p-8"
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
         >
           {/* Form error */}
           <AnimatePresence>
@@ -143,11 +143,11 @@ export default function SignInPage() {
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-<<<<<<< HEAD
+ HEAD
                 className="mb-5 rounded-xl border border-red-500/20 bg-red-500/8 px-4 py-3 text-sm text-red-300"
-=======
+
                 className="mb-5 rounded-xl border border-red-400/20 bg-red-400/8 px-4 py-3 text-sm text-red-500"
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
               >
                 {errors.form}
               </motion.div>
@@ -170,11 +170,11 @@ export default function SignInPage() {
                 aria-invalid={!!showNameErr}
               />
               {showNameErr && (
-<<<<<<< HEAD
+ HEAD
                 <p className="mt-1.5 text-xs text-red-300">{showNameErr}</p>
-=======
+
                 <p className="mt-1.5 text-xs text-red-500">{showNameErr}</p>
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
               )}
             </div>
 
@@ -194,22 +194,22 @@ export default function SignInPage() {
                 aria-invalid={!!showEmailErr}
               />
               {showEmailErr && (
-<<<<<<< HEAD
+ HEAD
                 <p className="mt-1.5 text-xs text-red-300">{showEmailErr}</p>
-=======
+
                 <p className="mt-1.5 text-xs text-red-500">{showEmailErr}</p>
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
               )}
             </div>
 
             <button
               type="submit"
               disabled={!canSubmit}
-<<<<<<< HEAD
+ HEAD
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500 disabled:pointer-events-none disabled:opacity-60"
-=======
+
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#546B41] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#99AD7A] disabled:pointer-events-none disabled:opacity-60"
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
             >
               {isSubmitting ? (
                 <>
@@ -222,8 +222,8 @@ export default function SignInPage() {
             </button>
           </form>
 
-<<<<<<< HEAD
-=======
+ HEAD
+
           {/* ── Divider ── */}
           <div className="my-5 flex items-center gap-3">
             <div className="h-px flex-1 bg-[var(--app-border)]" />
@@ -248,7 +248,7 @@ export default function SignInPage() {
             Continue with Google
           </button>
 
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
           {/* Trust signal */}
           <p className="mt-5 text-center text-xs text-[var(--app-text-muted)]">
             Free for 1 month &bull; No credit card required
@@ -263,11 +263,11 @@ export default function SignInPage() {
           className="mt-6 text-center text-xs text-[var(--app-text-muted)]"
         >
           New to Prompt2Deploy?{" "}
-<<<<<<< HEAD
+ HEAD
           <Link href="/onboard" className="font-semibold text-emerald-400 transition hover:text-emerald-300">
-=======
+
           <Link href="/onboard" className="font-semibold text-[#546B41] transition hover:text-[#99AD7A]">
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
             Deploy your first agent free →
           </Link>
         </motion.p>
