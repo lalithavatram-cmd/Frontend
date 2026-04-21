@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
-<<<<<<< HEAD
-=======
+HEAD
+
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,10 +67,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-<<<<<<< HEAD
+HEAD
       <body className="min-h-full flex flex-col bg-[var(--app-bg-solid)]">
         <Providers>{children}</Providers>
-=======
+
       <body className="relative min-h-full flex flex-col">
         {/* ── Persistent pastel gradient background ── */}
         <div
@@ -103,7 +103,7 @@ export default function RootLayout({
           <AnimatedBackground />
           {children}
         </Providers>
->>>>>>> 096e8fb (Initial commit - UI updates)
+ 096e8fb (Initial commit - UI updates)
       </body>
     </html>
   );
