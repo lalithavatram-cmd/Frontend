@@ -22,7 +22,7 @@ function Sidebar() {
         <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#546B41] shadow-sm">
           <svg className="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09Z" /></svg>
         </div>
-        <span className="text-sm font-semibold text-[var(--app-text)]">Agent<span className="text-[#546B41]">Flow</span></span>
+        <span className="text-sm font-semibold text-[var(--app-text)]">Prompt2<span className="text-[#546B41]">Deploy</span></span>
       </Link>
       <nav className="mt-4 space-y-1">
         {NAV.map((item) => {
