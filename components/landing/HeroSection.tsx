@@ -1,17 +1,5 @@
 "use client";
 
-<<<<<<< HEAD
-import { motion, useMotionValue, useSpring, useTransform, type Variants } from "framer-motion";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-
-/* ── Animated agent-activity card ─────────────────────────────────────────── */
-const ACTIVITY_ITEMS = [
-  { icon: "📞", label: "Call answered",     sub: "Brew Bay Café — Inbound",        color: "text-emerald-400", delay: 0 },
-  { icon: "📅", label: "Booking confirmed", sub: "Apex Roofing — 14 Jan 10:00 AM", color: "text-teal-400",    delay: 1.2 },
-  { icon: "🎯", label: "Lead qualified",    sub: "LexGroup — Budget confirmed",    color: "text-amber-400",   delay: 2.4 },
-  { icon: "💬", label: "SMS sent",          sub: "Missed call follow-up",          color: "text-emerald-300", delay: 3.6 },
-=======
 import {
   motion,
   useMotionValue,
@@ -150,7 +138,6 @@ const ACTIVITY_ITEMS = [
   { icon: "📅", label: "Booking confirmed", sub: "Apex Roofing — 14 Jan 10:00 AM", color: "text-[#99AD7A]",    delay: 1.2 },
   { icon: "🎯", label: "Lead qualified",    sub: "LexGroup — Budget confirmed",    color: "text-amber-600",   delay: 2.4 },
   { icon: "💬", label: "SMS sent",          sub: "Missed call follow-up",          color: "text-[#546B41]", delay: 3.6 },
->>>>>>> 096e8fb (Initial commit - UI updates)
 ];
 
 function LiveActivityCard() {
@@ -162,15 +149,6 @@ function LiveActivityCard() {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <div className="rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)] shadow-[0_24px_60px_-16px_rgba(0,0,0,0.6)]">
-      {/* Header bar */}
-      <div className="flex items-center gap-2 rounded-t-2xl border-b border-[var(--app-border)] px-4 py-3">
-        <div className="flex gap-1.5">
-          <span className="h-2.5 w-2.5 rounded-full bg-red-500/60" />
-          <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
-          <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
-=======
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
@@ -182,18 +160,12 @@ function LiveActivityCard() {
           <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#99AD7A]/80" />
->>>>>>> 096e8fb (Initial commit - UI updates)
         </div>
         <span className="flex-1 text-center font-mono text-[11px] text-[var(--app-text-muted)]">
           prompt2deploy · live dashboard
         </span>
-<<<<<<< HEAD
-        <span className="flex items-center gap-1 rounded-full bg-emerald-500/12 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
-          <span className="h-1.5 w-1.5 animate-ping-slow rounded-full bg-emerald-400" />
-=======
         <span className="flex items-center gap-1 rounded-full bg-[#546B41]/12 px-2 py-0.5 text-[10px] font-semibold text-[#546B41]">
           <span className="h-1.5 w-1.5 animate-ping-slow rounded-full bg-[#546B41]" />
->>>>>>> 096e8fb (Initial commit - UI updates)
           LIVE
         </span>
       </div>
@@ -223,11 +195,7 @@ function LiveActivityCard() {
             animate={{ opacity: active === i ? 1 : 0.35, x: active === i ? 0 : -4 }}
             transition={{ duration: 0.4 }}
             className="flex items-center gap-3 rounded-xl px-3 py-2.5 transition"
-<<<<<<< HEAD
-            style={{ background: active === i ? "rgba(255,255,255,0.03)" : "transparent" }}
-=======
             style={{ background: active === i ? "rgba(84,107,65,0.06)" : "transparent" }}
->>>>>>> 096e8fb (Initial commit - UI updates)
           >
             <span className="text-base">{item.icon}</span>
             <div className="min-w-0 flex-1">
@@ -238,11 +206,7 @@ function LiveActivityCard() {
               <motion.span
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-<<<<<<< HEAD
-                className="h-1.5 w-1.5 rounded-full bg-emerald-400"
-=======
                 className="h-1.5 w-1.5 rounded-full bg-[#546B41]"
->>>>>>> 096e8fb (Initial commit - UI updates)
               />
             )}
           </motion.div>
@@ -251,28 +215,16 @@ function LiveActivityCard() {
 
       {/* Agent status bar */}
       <div className="flex items-center gap-2 rounded-b-2xl border-t border-[var(--app-border)] px-4 py-2.5">
-<<<<<<< HEAD
-        <div className="h-2 w-2 animate-ping-slow rounded-full bg-emerald-400" />
-=======
         <div className="h-2 w-2 animate-ping-slow rounded-full bg-[#546B41]" />
->>>>>>> 096e8fb (Initial commit - UI updates)
         <p className="text-[10px] font-medium text-[var(--app-text-muted)]">
           3 AI Agents active · 0 missed calls
         </p>
       </div>
-<<<<<<< HEAD
-    </div>
-  );
-}
-
-/* ── Hero ──────────────────────────────────────────────────────────────────── */
-=======
     </motion.div>
   );
 }
 
 /* ── Hero ────────────────────────────────────────────────────────────────── */
->>>>>>> 096e8fb (Initial commit - UI updates)
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
@@ -293,13 +245,8 @@ export function HeroSection() {
     show: { transition: { staggerChildren: 0.1 } },
   };
   const fadeUp: Variants = {
-<<<<<<< HEAD
-    hidden: { opacity: 0, y: 24 },
-    show:   { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
-=======
     hidden: { opacity: 0, y: 28 },
     show:   { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
->>>>>>> 096e8fb (Initial commit - UI updates)
   };
 
   return (
@@ -309,14 +256,6 @@ export function HeroSection() {
       onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-20 pb-16"
     >
-<<<<<<< HEAD
-      {/* Background */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 grid-pattern opacity-100" />
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--app-bg-solid)]" />
-
-      {/* Subtle ambient — no neon */}
-      <div aria-hidden className="pointer-events-none absolute left-1/3 top-1/4 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-900/20 blur-[140px]" />
-=======
       {/* Particle layer */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <ParticleCanvas />
@@ -346,7 +285,6 @@ export function HeroSection() {
         {/* Bottom fade */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/60" />
       </div>
->>>>>>> 096e8fb (Initial commit - UI updates)
 
       {/* Content grid */}
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:gap-12">
@@ -359,28 +297,13 @@ export function HeroSection() {
         >
           {/* Badge */}
           <motion.div variants={fadeUp}>
-<<<<<<< HEAD
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/8 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-emerald-400">
-              <span className="h-1.5 w-1.5 animate-ping-slow rounded-full bg-emerald-400" />
-=======
             <span className="inline-flex items-center gap-2 rounded-full border border-[#546B41]/25 bg-[#546B41]/8 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-[#546B41]">
               <span className="h-1.5 w-1.5 animate-ping-slow rounded-full bg-[#546B41]" />
->>>>>>> 096e8fb (Initial commit - UI updates)
               Built for Small Business
             </span>
           </motion.div>
 
           {/* Headline */}
-<<<<<<< HEAD
-          <motion.h1
-            variants={fadeUp}
-            className="text-5xl font-bold leading-[1.08] tracking-tight text-[var(--app-text)] sm:text-6xl lg:text-[68px]"
-          >
-            Stop Losing Customers
-            <br />
-            <span className="gradient-text">to Missed Calls.</span>
-          </motion.h1>
-=======
           <motion.div variants={fadeUp} className="flex flex-col gap-4">
             <h1 className="text-5xl font-bold leading-[1.08] tracking-tight text-[var(--app-text)] sm:text-6xl lg:text-[68px]">
               Expert-level AI,
@@ -391,54 +314,32 @@ export function HeroSection() {
               Build, deploy, and manage AI agents — <span className="font-semibold text-[#546B41]">without any AI skills.</span>
             </p>
           </motion.div>
->>>>>>> 096e8fb (Initial commit - UI updates)
 
           {/* Sub */}
           <motion.p
             variants={fadeUp}
             className="max-w-lg text-lg leading-relaxed text-[var(--app-text-muted)]"
           >
-<<<<<<< HEAD
-            Built for small businesses that can&rsquo;t afford to miss a single call.
-            Tell us about your business and we&rsquo;ll deploy a custom AI voice agent
-            in minutes — no tech team, no complicated setup.
-=======
             Most businesses miss opportunities because they lack the time, team, or expertise to build automation. Our platform lets you create, deploy, and manage powerful AI agents in minutes — all in one place, no technical skills required.
->>>>>>> 096e8fb (Initial commit - UI updates)
           </motion.p>
 
           {/* CTA row */}
           <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3">
-<<<<<<< HEAD
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Link
-                href="/onboard"
-                className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition hover:bg-emerald-500"
-=======
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
               <SparkleButton
                 href="/onboard"
                 className="inline-flex items-center gap-2 rounded-xl bg-[#546B41] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#546B41]/25 transition-all duration-300 hover:bg-[#3d5030] hover:shadow-[#546B41]/40 hover:shadow-xl"
->>>>>>> 096e8fb (Initial commit - UI updates)
               >
                 Build Your Agent Free
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
-<<<<<<< HEAD
-              </Link>
-=======
               </SparkleButton>
->>>>>>> 096e8fb (Initial commit - UI updates)
             </motion.div>
             <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
               <a
                 href="#how-it-works"
-<<<<<<< HEAD
-                className="inline-flex items-center gap-2 rounded-xl border border-[var(--app-border)] bg-white/[0.02] px-6 py-3.5 text-sm font-medium text-[var(--app-text-muted)] transition hover:bg-white/[0.04] hover:text-[var(--app-text)]"
-=======
                 className="inline-flex items-center gap-2 rounded-xl border border-[var(--app-border)] bg-white/70 px-6 py-3.5 text-sm font-medium text-[var(--app-text-muted)] backdrop-blur-sm transition-all hover:bg-[#DCCCAC]/30 hover:text-[var(--app-text)]"
->>>>>>> 096e8fb (Initial commit - UI updates)
               >
                 See how it works
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -452,11 +353,7 @@ export function HeroSection() {
           <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-5 text-xs text-[var(--app-text-muted)]">
             {["No credit card required", "Up and running in 5 minutes", "Cancel any time"].map((t) => (
               <span key={t} className="flex items-center gap-1.5">
-<<<<<<< HEAD
-                <svg className="h-3.5 w-3.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-=======
                 <svg className="h-3.5 w-3.5 text-[#546B41]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
->>>>>>> 096e8fb (Initial commit - UI updates)
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 {t}

@@ -12,11 +12,7 @@ export function AiHeroImage({ className }: { className?: string }) {
           className="absolute -inset-10 -z-10 rounded-[3rem] bg-indigo-500/10 blur-3xl"
         />
 
-<<<<<<< HEAD
-        <div className="absolute inset-0 rounded-[2.25rem] border border-[var(--app-border)] bg-[#0b1020]/60 shadow-[0_20px_60px_-30px_rgba(99,102,241,0.55)] backdrop-blur overflow-hidden flex items-center justify-center">
-=======
         <div className="absolute inset-0 rounded-[2.25rem] border border-[var(--app-border)] bg-[#0b1020]/60 shadow-2xl shadow-[#99AD7A]/20 backdrop-blur overflow-hidden flex items-center justify-center">
->>>>>>> 096e8fb (Initial commit - UI updates)
           <svg
             viewBox="0 0 300 300"
             xmlns="http://www.w3.org/2000/svg"

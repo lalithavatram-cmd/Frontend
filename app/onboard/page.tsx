@@ -7,15 +7,9 @@ import Link from "next/link";
 
 /* ── Shared input + textarea styles ────────────────────────────────────────── */
 const inputCls =
- HEAD
-  "w-full rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] px-4 py-3 text-sm text-[var(--app-text)] outline-none transition " +
-  "placeholder:text-[var(--app-text-muted)]/60 " +
-  "focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/15";
-
   "w-full rounded-xl border border-[var(--app-border)] bg-[var(--app-card)] px-4 py-3 text-sm text-[var(--app-text)] outline-none transition " +
   "placeholder:text-[var(--app-text-muted)]/60 " +
   "focus:border-[#546B41]/50 focus:ring-2 focus:ring-[#546B41]/15";
- 096e8fb (Initial commit - UI updates)
 
 const labelCls = "block text-xs font-semibold uppercase tracking-widest text-[var(--app-text-muted)] mb-2";
 
@@ -102,11 +96,7 @@ export default function OnboardPage() {
     <div className="relative min-h-screen bg-[var(--app-bg-solid)] px-4 py-8 sm:py-14">
       {/* Background */}
       <div aria-hidden className="pointer-events-none absolute inset-0 grid-pattern opacity-40" />
- HEAD
-      <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-900/15 blur-[120px]" />
-
       <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#99AD7A]/15 blur-[120px]" />
- 096e8fb (Initial commit - UI updates)
 
       {/* Back link */}
       <div className="relative mx-auto max-w-xl">
@@ -123,11 +113,7 @@ export default function OnboardPage() {
 
       <div className="relative mx-auto w-full max-w-xl">
         {/* Card */}
- HEAD
-        <div className="overflow-hidden rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)] shadow-[0_24px_80px_-20px_rgba(0,0,0,0.8)]">
-
         <div className="overflow-hidden rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)] shadow-[0_24px_80px_-20px_rgba(84,107,65,0.15)]">
- 096e8fb (Initial commit - UI updates)
           {/* Top strip */}
           <div className="border-b border-[var(--app-border)] px-7 py-5">
             {/* Step dots */}
@@ -138,15 +124,9 @@ export default function OnboardPage() {
                   className={[
                     "h-1.5 flex-1 rounded-full transition-all duration-500",
                     n < step
- HEAD
-                      ? "bg-emerald-500"
-                      : n === step
-                      ? "bg-emerald-500"
-
                       ? "bg-[#546B41]"
                       : n === step
                       ? "bg-[#99AD7A]"
- 096e8fb (Initial commit - UI updates)
                       : "bg-[var(--app-border)]",
                   ].join(" ")}
                 />
@@ -216,13 +196,8 @@ export default function OnboardPage() {
                         className={[
                           "flex w-full items-center justify-between rounded-xl border px-4 py-3 text-sm font-medium transition",
                           showScaleOptions
- HEAD
-                            ? "border-emerald-500/50 bg-emerald-500/8 text-[var(--app-text)]"
-                            : "border-[var(--app-border)] bg-[var(--app-surface)] text-[var(--app-text-muted)] hover:bg-white/[0.03]",
-
                             ? "border-[#546B41]/50 bg-[#546B41]/8 text-[var(--app-text)]"
                             : "border-[var(--app-border)] bg-[var(--app-card)] text-[var(--app-text-muted)] hover:bg-[#DCCCAC]/20",
- 096e8fb (Initial commit - UI updates)
                         ].join(" ")}
                       >
                         <span>{form.company_scale ? SCALE_OPTIONS.find((o) => o.value === form.company_scale)?.label : "Select team size"}</span>
@@ -251,13 +226,8 @@ export default function OnboardPage() {
                                   className={[
                                     "rounded-xl border px-3.5 py-2 text-sm font-medium transition",
                                     form.company_scale === opt.value
- HEAD
-                                      ? "border-emerald-500/50 bg-emerald-500/10 text-[var(--app-text)]"
-                                      : "border-[var(--app-border)] text-[var(--app-text-muted)] hover:bg-white/[0.03]",
-
                                       ? "border-[#546B41]/50 bg-[#546B41]/10 text-[var(--app-text)]"
                                       : "border-[var(--app-border)] text-[var(--app-text-muted)] hover:bg-[#DCCCAC]/20",
- 096e8fb (Initial commit - UI updates)
                                   ].join(" ")}
                                 >
                                   {opt.label}
@@ -325,39 +295,22 @@ export default function OnboardPage() {
                       <motion.div
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
- HEAD
-                        className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.05] p-4 space-y-2"
-                      >
-                        <p className="text-xs font-semibold text-emerald-400">Building agent for:</p>
-                        <div className="flex flex-wrap gap-2">
-                          {form.business_name && (
-                            <span className="rounded-lg bg-white/5 px-2.5 py-1 text-xs font-medium text-[var(--app-text)]">
-
                         className="rounded-xl border border-[#546B41]/20 bg-[#546B41]/[0.05] p-4 space-y-2"
                       >
                         <p className="text-xs font-semibold text-[#546B41]">Building agent for:</p>
                         <div className="flex flex-wrap gap-2">
                           {form.business_name && (
                             <span className="rounded-lg bg-[#DCCCAC]/30 px-2.5 py-1 text-xs font-medium text-[var(--app-text)]">
- 096e8fb (Initial commit - UI updates)
                               📍 {form.business_name}
                             </span>
                           )}
                           {form.industry && (
- HEAD
-                            <span className="rounded-lg bg-white/5 px-2.5 py-1 text-xs font-medium text-[var(--app-text)]">
-
                             <span className="rounded-lg bg-[#DCCCAC]/30 px-2.5 py-1 text-xs font-medium text-[var(--app-text)]">
- 096e8fb (Initial commit - UI updates)
                               🏢 {form.industry}
                             </span>
                           )}
                           {form.company_scale && (
- HEAD
-                            <span className="rounded-lg bg-white/5 px-2.5 py-1 text-xs font-medium text-[var(--app-text)]">
-
                             <span className="rounded-lg bg-[#DCCCAC]/30 px-2.5 py-1 text-xs font-medium text-[var(--app-text)]">
- 096e8fb (Initial commit - UI updates)
                               👥 {form.company_scale} employees
                             </span>
                           )}
@@ -369,11 +322,7 @@ export default function OnboardPage() {
                       <motion.div
                         initial={{ opacity: 0, y: 6 }}
                         animate={{ opacity: 1, y: 0 }}
- HEAD
-                        className="rounded-xl border border-red-500/25 bg-red-500/8 px-4 py-3 text-sm text-red-300"
-
                         className="rounded-xl border border-red-400/25 bg-red-400/8 px-4 py-3 text-sm text-red-500"
- 096e8fb (Initial commit - UI updates)
                       >
                         {error}
                       </motion.div>
@@ -390,11 +339,7 @@ export default function OnboardPage() {
               type="button"
               onClick={goBack}
               disabled={step === 1 || isSubmitting}
- HEAD
-              className="flex items-center gap-2 rounded-xl border border-[var(--app-border)] px-4 py-2.5 text-sm font-medium text-[var(--app-text-muted)] transition hover:bg-white/[0.03] hover:text-[var(--app-text)] disabled:pointer-events-none disabled:opacity-40"
-
               className="flex items-center gap-2 rounded-xl border border-[var(--app-border)] px-4 py-2.5 text-sm font-medium text-[var(--app-text-muted)] transition hover:bg-[#DCCCAC]/20 hover:text-[var(--app-text)] disabled:pointer-events-none disabled:opacity-40"
- 096e8fb (Initial commit - UI updates)
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -407,11 +352,7 @@ export default function OnboardPage() {
                 type="button"
                 onClick={goNext}
                 disabled={!canGoNext}
- HEAD
-                className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500 disabled:pointer-events-none disabled:opacity-50"
-
                 className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#546B41] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#99AD7A] disabled:pointer-events-none disabled:opacity-50"
- 096e8fb (Initial commit - UI updates)
               >
                 Continue
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -423,11 +364,7 @@ export default function OnboardPage() {
                 type="button"
                 onClick={handleAnalyse}
                 disabled={isSubmitting}
- HEAD
-                className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500 disabled:pointer-events-none disabled:opacity-70"
-
                 className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#546B41] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#99AD7A] disabled:pointer-events-none disabled:opacity-70"
- 096e8fb (Initial commit - UI updates)
               >
                 {isSubmitting ? (
                   <>
@@ -439,11 +376,7 @@ export default function OnboardPage() {
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09Z" />
                     </svg>
- HEAD
-                    Analyse & Build Agents
-
                     Analyse &amp; Build Agents
- 096e8fb (Initial commit - UI updates)
                   </>
                 )}
               </button>

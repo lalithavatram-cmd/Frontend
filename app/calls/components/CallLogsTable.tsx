@@ -58,11 +58,7 @@ export function CallLogsTable({
   }, [open]);
 
   return (
-
-    <section className="rounded-3xl border border-[var(--app-border)] bg-[color:var(--app-card)] p-6 shadow-[0_20px_60px_-45px_rgba(0,0,0,0.9)]">
-
     <section className="rounded-3xl border border-[var(--app-border)] bg-[color:var(--app-card)] p-6 shadow-xl shadow-[#546B41]/5">
-
       <div className="flex items-center justify-between gap-3">
         <div>
           <h2 className="text-sm font-semibold text-[color:var(--app-text)]">
@@ -180,11 +176,7 @@ export function CallLogsTable({
             aria-label="Close modal"
           />
 
-
-          <div className="relative w-full max-w-2xl rounded-3xl border border-[var(--app-border)] bg-[color:var(--app-card)] shadow-[0_30px_90px_-50px_rgba(0,0,0,0.95)]">
-
           <div className="relative w-full max-w-2xl rounded-3xl border border-[var(--app-border)] bg-[color:var(--app-card)] shadow-2xl shadow-[#546B41]/10">
-
             <div className="flex items-start justify-between gap-4 border-b border-white/5 p-5">
               <div className="min-w-0">
                 <p className="text-xs font-semibold uppercase tracking-wide text-[color:var(--app-text-muted)]">

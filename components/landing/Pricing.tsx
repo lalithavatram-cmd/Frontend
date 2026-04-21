@@ -60,28 +60,18 @@ const PLANS = [
 ];
 
 const fadeUp: Variants = {
-<<<<<<< HEAD
-  hidden: { opacity: 0, y: 24 },
-=======
   hidden: { opacity: 0, y: 28 },
->>>>>>> 096e8fb (Initial commit - UI updates)
   show:   { opacity: 1, y: 0, transition: { duration: 0.55, ease: "circOut" } },
 };
 
 export function Pricing() {
   return (
-<<<<<<< HEAD
-    <section id="pricing" className="relative overflow-hidden py-32">
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--app-border)]" />
-
-=======
     <section id="pricing" className="relative overflow-hidden py-20">
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--app-border)]" />
 
       {/* Ambient blobs */}
       <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[800px] -translate-x-1/2 rounded-full bg-[#546B41]/5 blur-[100px]" />
 
->>>>>>> 096e8fb (Initial commit - UI updates)
       <div className="relative mx-auto max-w-7xl px-6">
         {/* Header */}
         <motion.div
@@ -91,11 +81,7 @@ export function Pricing() {
           viewport={{ once: true, margin: "-80px" }}
           className="mx-auto max-w-2xl text-center"
         >
-<<<<<<< HEAD
-          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/6 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-emerald-400">
-=======
           <span className="inline-flex items-center gap-2 rounded-full border border-[#546B41]/20 bg-[#546B41]/6 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-[#546B41]">
->>>>>>> 096e8fb (Initial commit - UI updates)
             Transparent pricing
           </span>
           <h2 className="mt-5 text-4xl font-bold leading-tight tracking-tight text-[var(--app-text)] sm:text-5xl">
@@ -112,24 +98,6 @@ export function Pricing() {
           {PLANS.map((plan, i) => (
             <motion.div
               key={plan.name}
-<<<<<<< HEAD
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.1 }}
-              className={[
-                "relative flex flex-col rounded-2xl border p-8 transition-colors duration-300",
-                plan.highlight
-                  ? "border-emerald-500/40 bg-emerald-500/[0.05]"
-                  : "border-[var(--app-border)] bg-[var(--app-card)] hover:border-[var(--app-border-light)]",
-              ].join(" ")}
-            >
-              {plan.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-600 px-3.5 py-1 text-[11px] font-semibold text-white shadow-sm">
-                  {plan.badge}
-                </span>
-=======
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -152,15 +120,11 @@ export function Pricing() {
                 >
                   {plan.badge}
                 </motion.span>
->>>>>>> 096e8fb (Initial commit - UI updates)
               )}
 
               <div>
                 <p className="text-sm font-semibold text-[var(--app-text-muted)]">{plan.name}</p>
                 <div className="mt-3 flex items-end gap-1">
-<<<<<<< HEAD
-                  <span className="text-4xl font-bold tracking-tight text-[var(--app-text)]">{plan.price}</span>
-=======
                   <motion.span
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -170,36 +134,12 @@ export function Pricing() {
                   >
                     {plan.price}
                   </motion.span>
->>>>>>> 096e8fb (Initial commit - UI updates)
                   {plan.period && <span className="mb-1 text-sm text-[var(--app-text-muted)]">{plan.period}</span>}
                 </div>
                 <p className="mt-3 text-sm text-[var(--app-text-muted)]">{plan.description}</p>
               </div>
 
               <ul className="mt-8 flex-1 space-y-3">
-<<<<<<< HEAD
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-[var(--app-text-muted)]">
-                    <svg className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <Link
-                href={plan.href}
-                className={[
-                  "mt-8 flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition",
-                  plan.highlight
-                    ? "bg-emerald-600 text-white hover:bg-emerald-500"
-                    : "border border-[var(--app-border)] bg-white/[0.03] text-[var(--app-text)] hover:bg-white/5",
-                ].join(" ")}
-              >
-                {plan.cta}
-              </Link>
-=======
                 {plan.features.map((f, fi) => (
                   <motion.li
                     key={f}
@@ -230,7 +170,6 @@ export function Pricing() {
                   {plan.cta}
                 </Link>
               </motion.div>
->>>>>>> 096e8fb (Initial commit - UI updates)
             </motion.div>
           ))}
         </div>

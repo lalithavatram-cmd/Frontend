@@ -48,17 +48,10 @@ function formatDate(iso: string): string {
 
 function intentBadge(intent: string) {
   const map: Record<string, string> = {
- HEAD
-    appointment_booking: "bg-emerald-500/10 text-emerald-400 ring-emerald-500/20",
-    lead_inquiry: "bg-blue-500/10 text-blue-400 ring-blue-500/20",
-    support_request: "bg-amber-500/10 text-amber-400 ring-amber-500/20",
-    unknown: "bg-[var(--app-surface)] text-[var(--app-text-muted)] ring-white/5",
-
     appointment_booking: "bg-[#546B41]/10 text-[#546B41] ring-[#546B41]/20",
     lead_inquiry: "bg-[#99AD7A]/15 text-[#546B41] ring-[#99AD7A]/25",
     support_request: "bg-[#DCCCAC]/30 text-[#546B41] ring-[#DCCCAC]/40",
     unknown: "bg-[var(--app-card)] text-[var(--app-text-muted)] ring-[var(--app-border)]",
- 096e8fb (Initial commit - UI updates)
   };
   const label: Record<string, string> = {
     appointment_booking: "Appointment",
@@ -96,16 +89,10 @@ function Sidebar() {
   return (
     <div className="sticky top-6 rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)] p-4">
       <Link href="/" className="flex items-center gap-2 px-2 py-2">
- HEAD
-        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 shadow-sm">
-          <svg className="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09Z" /></svg>
-        </div>
-        <span className="text-sm font-semibold text-[var(--app-text)]">Agent<span className="text-emerald-400">Flow</span></span>
-
         <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#546B41] shadow-sm">
           <svg className="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09Z" /></svg>
         </div>
-        <span className="text-sm font-semibold text-[var(--app-text)]">Agent<span className="text-[#546B41]">Flow</span></span> 096e8fb (Initial commit - UI updates)
+        <span className="text-sm font-semibold text-[var(--app-text)]">Agent<span className="text-[#546B41]">Flow</span></span>
       </Link>
       <nav className="mt-4 space-y-1">
         {NAV.map((item) => {
@@ -117,15 +104,6 @@ function Sidebar() {
               className={[
                 "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all",
                 active
- HEAD
-                  ? "bg-emerald-500/10 text-[var(--app-text)] ring-1 ring-emerald-500/20"
-                  : "text-[var(--app-text-muted)] hover:bg-white/[0.04] hover:text-[var(--app-text)]",
-              ].join(" ")}
-            >
-              <span className={active ? "text-emerald-400" : ""}>{item.icon}</span>
-              {item.label}
-              {active && <span className="ml-auto h-1.5 w-1.5 rounded-full bg-emerald-400" />}
-
                   ? "bg-[#546B41]/10 text-[var(--app-text)] ring-1 ring-[#546B41]/20"
                   : "text-[var(--app-text-muted)] hover:bg-[#DCCCAC]/20 hover:text-[var(--app-text)]",
               ].join(" ")}
@@ -133,7 +111,6 @@ function Sidebar() {
               <span className={active ? "text-[#546B41]" : ""}>{item.icon}</span>
               {item.label}
               {active && <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[#546B41]" />}
-  096e8fb (Initial commit - UI updates)
             </Link>
           );
         })}
@@ -147,11 +124,7 @@ function Sidebar() {
 function TranscriptModal({ call, onClose }: { call: CallRecord; onClose: () => void }) {
   return (
     <div
-  HEAD
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
- 
       className="fixed inset-0 z-50 flex items-center justify-center bg-[#1F2937]/40 p-4"
- 096e8fb (Initial commit - UI updates)
       onClick={onClose}
     >
       <div
@@ -165,29 +138,17 @@ function TranscriptModal({ call, onClose }: { call: CallRecord; onClose: () => v
           </div>
           <button
             onClick={onClose}
-  HEAD
-            className="rounded-lg p-1.5 text-[var(--app-text-muted)] transition hover:bg-white/[0.06] hover:text-[var(--app-text)]"
- 
             className="rounded-lg p-1.5 text-[var(--app-text-muted)] transition hover:bg-[#DCCCAC]/30 hover:text-[var(--app-text)]"
-  096e8fb (Initial commit - UI updates)
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
         </div>
         {call.summary && (
-  HEAD
-          <div className="mb-4 rounded-xl bg-[var(--app-surface)] p-3 text-sm text-[var(--app-text-muted)]">
-            <span className="font-medium text-[var(--app-text)]">Summary: </span>{call.summary}
-          </div>
-        )}
-        <div className="max-h-72 overflow-y-auto rounded-xl bg-[var(--app-surface)] p-3 text-xs leading-relaxed text-[var(--app-text-muted)]">
- 
           <div className="mb-4 rounded-xl bg-[#FFF8EC] border border-[var(--app-border)] p-3 text-sm text-[var(--app-text-muted)]">
             <span className="font-medium text-[var(--app-text)]">Summary: </span>{call.summary}
           </div>
         )}
         <div className="max-h-72 overflow-y-auto rounded-xl bg-[#FFF8EC] border border-[var(--app-border)] p-3 text-xs leading-relaxed text-[var(--app-text-muted)]">
- 096e8fb (Initial commit - UI updates)
           {call.transcript || "No transcript available."}
         </div>
       </div>
@@ -246,13 +207,8 @@ export default function CallsPage() {
                 All inbound calls handled by your AI agents.
               </p>
             </div>
-  HEAD
-            <div className="flex items-center gap-2 rounded-xl border border-[var(--app-border)] bg-[var(--app-surface)] px-3 py-2 text-sm">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping-slow" />
- 
             <div className="flex items-center gap-2 rounded-xl border border-[var(--app-border)] bg-[var(--app-card)] px-3 py-2 text-sm">
               <span className="h-2 w-2 rounded-full bg-[#546B41] animate-ping-slow" />
- 096e8fb (Initial commit - UI updates)
               <span className="text-[var(--app-text-muted)]">{calls.length} total</span>
             </div>
           </motion.header>
@@ -271,13 +227,8 @@ export default function CallsPage() {
                 className={[
                   "rounded-xl border px-3.5 py-2 text-sm font-medium transition",
                   filter === f.value
- HEAD
-                    ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-400"
-                    : "border-[var(--app-border)] bg-[var(--app-card)] text-[var(--app-text-muted)] hover:bg-white/[0.03] hover:text-[var(--app-text)]",
-
                     ? "border-[#546B41]/40 bg-[#546B41]/10 text-[#546B41]"
                     : "border-[var(--app-border)] bg-[var(--app-card)] text-[var(--app-text-muted)] hover:bg-[#DCCCAC]/20 hover:text-[var(--app-text)]",
- 096e8fb (Initial commit - UI updates)
                 ].join(" ")}
               >
                 {f.label}
@@ -296,34 +247,20 @@ export default function CallsPage() {
               <div className="space-y-px">
                 {[...Array(4)].map((_, i) => (
                   <div key={i} className="flex items-center gap-4 border-b border-[var(--app-border)] px-6 py-4 last:border-0">
-  HEAD
-                    <div className="h-4 w-28 animate-pulse rounded bg-white/[0.06]" />
-                    <div className="h-4 w-20 animate-pulse rounded bg-white/[0.06]" />
-                    <div className="ml-auto h-4 w-16 animate-pulse rounded bg-white/[0.06]" />
-
                     <div className="h-4 w-28 animate-pulse rounded bg-[#DCCCAC]/40" />
                     <div className="h-4 w-20 animate-pulse rounded bg-[#DCCCAC]/40" />
                     <div className="ml-auto h-4 w-16 animate-pulse rounded bg-[#DCCCAC]/40" />
- 096e8fb (Initial commit - UI updates)
                   </div>
                 ))}
               </div>
             ) : error ? (
               <div className="flex flex-col items-center gap-3 py-16 text-center">
-HEAD
-                <p className="text-sm font-medium text-red-400">Failed to load calls</p>
- 
                 <p className="text-sm font-medium text-red-500">Failed to load calls</p>
-096e8fb (Initial commit - UI updates)
                 <p className="text-xs text-[var(--app-text-muted)]">{error}</p>
               </div>
             ) : visible.length === 0 ? (
               <div className="flex flex-col items-center gap-5 py-24 text-center">
-HEAD
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[var(--app-border)] bg-[var(--app-surface)]">
-
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)]">
- 096e8fb (Initial commit - UI updates)
                   <svg className="h-7 w-7 text-[var(--app-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                   </svg>
@@ -336,11 +273,7 @@ HEAD
                 </div>
                 <Link
                   href="/onboard"
-HEAD
-                  className="mt-2 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500"
- 
                   className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[#546B41] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#99AD7A]"
- 096e8fb (Initial commit - UI updates)
                 >
                   Deploy your agent →
                 </Link>
@@ -361,11 +294,7 @@ HEAD
                     <tr
                       key={call.call_id}
                       onClick={() => setSelected(call)}
-  HEAD
-                      className="border-b border-[var(--app-border)] last:border-0 cursor-pointer transition hover:bg-white/[0.025]"
- 
                       className="border-b border-[var(--app-border)] last:border-0 cursor-pointer transition hover:bg-[#DCCCAC]/10"
-  096e8fb (Initial commit - UI updates)
                     >
                       <td className="px-6 py-4 font-mono text-xs text-[var(--app-text)]">
                         {call.phone || "—"}

@@ -11,11 +11,7 @@ const FEATURES = [
     ),
     title: "24/7 AI Receptionist",
     description: "Every call answered, every time — even at 2am. Your AI agent books, qualifies, and routes callers so you never lose a customer to voicemail again.",
-<<<<<<< HEAD
-    color: "emerald",
-=======
     color: "primary",
->>>>>>> 096e8fb (Initial commit - UI updates)
   },
   {
     icon: (
@@ -25,11 +21,7 @@ const FEATURES = [
     ),
     title: "Automatic Bookings",
     description: "Syncs with your calendar to book, reschedule, and confirm appointments without lifting a finger — your schedule fills itself.",
-<<<<<<< HEAD
-    color: "teal",
-=======
     color: "secondary",
->>>>>>> 096e8fb (Initial commit - UI updates)
   },
   {
     icon: (
@@ -39,11 +31,7 @@ const FEATURES = [
     ),
     title: "Instant Automation",
     description: "Missed call SMS, lead follow-ups, support tickets — automated workflows deploy alongside every agent so nothing slips through the cracks.",
-<<<<<<< HEAD
-    color: "emerald",
-=======
     color: "primary",
->>>>>>> 096e8fb (Initial commit - UI updates)
   },
   {
     icon: (
@@ -53,11 +41,7 @@ const FEATURES = [
     ),
     title: "Smart Lead Qualification",
     description: "Every caller is scored and qualified automatically — your team only speaks with people who are genuinely ready to buy or book.",
-<<<<<<< HEAD
-    color: "amber",
-=======
     color: "accent",
->>>>>>> 096e8fb (Initial commit - UI updates)
   },
   {
     icon: (
@@ -67,11 +51,7 @@ const FEATURES = [
     ),
     title: "Simple Dashboard",
     description: "Call volume, bookings, and agent activity — all in one clear view. Know exactly how your business is performing, any time.",
-<<<<<<< HEAD
-    color: "teal",
-=======
     color: "secondary",
->>>>>>> 096e8fb (Initial commit - UI updates)
   },
   {
     icon: (
@@ -81,32 +61,11 @@ const FEATURES = [
     ),
     title: "Works for Any Trade",
     description: "Roofers, restaurants, salons, legal firms, medical practices — pre-configured for your industry so it sounds like your business from day one.",
-<<<<<<< HEAD
-    color: "emerald",
-=======
     color: "primary",
->>>>>>> 096e8fb (Initial commit - UI updates)
   },
 ];
 
 const colorMap: Record<string, string> = {
-<<<<<<< HEAD
-  emerald: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-  teal:    "bg-teal-500/10 text-teal-400 border-teal-500/20",
-  amber:   "bg-amber-500/10 text-amber-400 border-amber-500/20",
-};
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.55, ease: "circOut" } },
-};
-
-export function Features() {
-  return (
-    <section id="features" className="relative overflow-hidden py-32">
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--app-border)]" />
-
-=======
   primary:   "bg-[#546B41]/10 text-[#546B41] border-[#546B41]/20",
   secondary: "bg-[#99AD7A]/15 text-[#546B41] border-[#99AD7A]/30",
   accent:    "bg-[#DCCCAC]/30 text-[#546B41] border-[#DCCCAC]/50",
@@ -136,7 +95,6 @@ export function Features() {
       {/* Background ambient */}
       <div aria-hidden className="pointer-events-none absolute left-0 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#546B41]/6 blur-[130px]" />
 
->>>>>>> 096e8fb (Initial commit - UI updates)
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <motion.div
@@ -146,11 +104,7 @@ export function Features() {
           viewport={{ once: true, margin: "-80px" }}
           className="mx-auto max-w-2xl text-center"
         >
-<<<<<<< HEAD
-          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/6 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-emerald-400">
-=======
           <span className="inline-flex items-center gap-2 rounded-full border border-[#546B41]/20 bg-[#546B41]/6 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-[#546B41]">
->>>>>>> 096e8fb (Initial commit - UI updates)
             Built for your business
           </span>
           <h2 className="mt-5 text-4xl font-bold leading-tight tracking-tight text-[var(--app-text)] sm:text-5xl">
@@ -167,21 +121,6 @@ export function Features() {
           {FEATURES.map((f, i) => (
             <motion.div
               key={f.title}
-<<<<<<< HEAD
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.07 }}
-              className="rounded-2xl border border-[var(--app-border)] bg-[var(--app-card)] p-6 transition-colors duration-300 hover:border-[var(--app-border-light)]"
-            >
-              <div className={`inline-flex h-10 w-10 items-center justify-center rounded-xl border ${colorMap[f.color]}`}>
-                {f.icon}
-              </div>
-
-              <h3 className="mt-4 font-semibold text-[var(--app-text)]">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--app-text-muted)]">{f.description}</p>
-=======
               variants={scaleIn}
               initial="hidden"
               whileInView="show"
@@ -208,7 +147,6 @@ export function Features() {
               <p className="mt-2 text-sm leading-relaxed text-[var(--app-text-muted)]">
                 {f.description}
               </p>
->>>>>>> 096e8fb (Initial commit - UI updates)
             </motion.div>
           ))}
         </div>
