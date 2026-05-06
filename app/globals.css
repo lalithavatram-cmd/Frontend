@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ──────────────────────────────────────────────────────── */
+:root {
+  --app-bg:           #0B0F1480;
+  --app-bg-solid:     #0B0F14;
+  --app-surface:      #111827;
+  --app-card:         #111827;
+  --app-card-hover:   #161f2e;
+  --app-border:       #1F2937;
+  --app-border-light: #374151;
+
+  --app-primary:      #10B981;
+  --app-primary-dim:  rgba(16, 185, 129, 0.12);
+  --app-secondary:    #34D399;
+  --app-accent:       #10B981;
+  --app-warn:         #f59e0b;
+
+  --app-text:         #F9FAFB;
+  --app-text-muted:   #6B7280;
+  --app-text-subtle:  #374151;
+
+  --glow-primary:     rgba(16, 185, 129, 0.20);
+  --glow-secondary:   rgba(52, 211, 153, 0.12);
+  --glow-accent:      rgba(16, 185, 129, 0.18);
+
+  --app-bg:           #FFF8EC;
+  --app-bg-solid:     #FFF8EC;
+  --app-surface:      #FFF8EC;
+  --app-card:         #FFFFFF;
+  --app-card-hover:   #FFF8EC;
+  --app-border:       #DCCCAC;
+  --app-border-light: #99AD7A;
+
+  --app-primary:      #546B41;
+  --app-primary-dim:  rgba(84, 107, 65, 0.12);
+  --app-secondary:    #99AD7A;
+  --app-accent:       #DCCCAC;
+  --app-warn:         #f59e0b;
+
+  --app-text:         #1F2937;
+  --app-text-muted:   #6B7280;
+  --app-text-subtle:  #9CA3AF;
+
+  --glow-primary:     rgba(84, 107, 65, 0.20);
+  --glow-secondary:   rgba(153, 173, 122, 0.15);
+  --glow-accent:      rgba(220, 204, 172, 0.25);
+
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  20px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+}
+
+@theme inline {
+  --color-background: var(--app-bg-solid);
+  --color-foreground: var(--app-text);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--app-bg-solid);
+  background-color: #f8fafc;
+  color: var(--app-text);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ─── Custom scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar          { width: 4px; height: 4px; }
+::-webkit-scrollbar-track    { background: transparent; }
+::-webkit-scrollbar-thumb    { background: var(--app-border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--app-primary); }
+
+/* ─── Selection ──────────────────────────────────────────────────────────── */
+::selection {
+  background: color-mix(in oklab, var(--app-primary) 25%, transparent);
+  color: #fff;
+}
+
+/* ─── Keyframes ──────────────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-16px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.04); }
+}
+
+@keyframes shimmer {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(200%); }
+}
+
+/* ─── Skeleton shimmer ───────────────────────────────────────────────────── */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--app-card);
+  border-radius: var(--radius-lg);
+}
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(84, 107, 65, 0.05) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* ── Navbar animated shine streak ──────────────────────────────────────────── */
+.navbar-shine-streak {
+  animation: navbarShine 2.4s linear infinite;
+}
+
+@keyframes navbarShine {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
